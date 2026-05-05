@@ -73,6 +73,7 @@ header{
     }
 }
 #index{
+
     #quisuisje{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -118,22 +119,29 @@ header{
         article{
             display: flex;
             align-items: center;
-            max-width: 1140px;
-            margin: auto;
             position: relative;
             div{
+                max-width: 380px;
                 padding: 30px;
                 background-color: var(--orange);
                 height: fit-content;
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 50px;
                 position: relative;
                 z-index: 10;
+                left: -80px;
+
+                h1{
+                    letter-spacing: 1.2px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
                 a{
                     position: absolute;
                     bottom: -24px;
-                    left: 90px;
+                    left: 140px;
                 }
             }
             img{
@@ -141,6 +149,19 @@ header{
                 object-fit: cover;
                 z-index:-10;
                 position: relative;
+            }
+        }
+        .reverse{
+            div{
+                left: 60px;
+            }
+        }
+    }
+
+    #skill{
+        div{
+            .collapse{
+                visibility: hidden;
             }
         }
     }
