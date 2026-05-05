@@ -127,7 +127,7 @@ header{
                 height: fit-content;
                 display: flex;
                 flex-direction: column;
-                gap: 50px;
+                gap: 30px;
                 position: relative;
                 z-index: 10;
                 left: -80px;
@@ -152,6 +152,7 @@ header{
             }
         }
         .reverse{
+            padding: 70px 0;
             div{
                 left: 60px;
             }
@@ -159,7 +160,49 @@ header{
     }
 
     #skill{
-        div{
+        display: grid;
+        padding: 30px 0;
+        gap: 50px;
+        h2{
+            justify-self: center;
+        }
+        .detail-all{
+            display: flex;
+            gap: 40px;
+            div{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 20px;
+
+                details{
+                    background-color: var(--white);
+                    height: fit-content;
+                    width: 100%;
+                    padding: 12px 10px 4px 12px;
+
+                    transition: all 0.3s ease-in-out ;
+    
+                    summary{
+                        color: var(--orange);
+                        /* width: fit-content; */
+                        list-style: none;
+                        border-bottom: solid var(--rose) 2px;
+                        padding-bottom: 8px;
+                        cursor: pointer;
+                    }
+                    ul{
+                    padding: 20px 30px 10px;
+                    list-style: circle;
+                        li{
+                            color: var(--black);
+                            ul{
+                                list-style: square;
+                            }
+                        }
+                    }
+                }
+            }
             .collapse{
                 visibility: hidden;
             }
