@@ -46,6 +46,7 @@ a{
 section{
     max-width: 1440px;
     margin: auto;
+    padding: 50px 0;
 }
 
 header{
@@ -69,6 +70,14 @@ header{
         gap: 30px;
         a{
             color: var(--orange);
+        }
+        .btn-templates{
+            background-color: var(--orange);
+            color: var(--white);
+            border: none;
+            &:hover{
+                background-color: var(--rose);
+            }
         }
     }
 }
@@ -203,12 +212,69 @@ header{
                     }
                 }
             }
-            .collapse{
-                visibility: hidden;
-            }
+
         }
     }
-}
+
+    #project{
+        display: grid;
+        gap: 30px;
+        div{
+            display: flex;
+            gap: 67px;
+            padding-bottom: 50px;
+            article{
+                display: grid;
+                gap: 20px;
+                .border{
+                    display: grid;
+                    gap: 10px;
+                    padding: 20px 10px 0;
+                    border-right: solid 1px ;
+                    border-left: solid 1px ;
+                    border-image: linear-gradient(var(--rose), var(--orange)) 1;
+                    position: relative;
+                    img{
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    h3{
+                        font-size: 21px;
+                        font-weight: 700;
+                    }
+                }
+                .front-index::before{
+                    content: "Front-end";
+                    color: var(--white);
+                    position: absolute;
+                    left: 20px;
+                    top: 40px;
+                    background: var(--black);
+                    padding: 4px;
+                }
+                .back-index::before{
+                    content: "Back-end";
+                    color: var(--white);
+                    position: absolute;
+                    left: 20px;
+                    top: 40px;
+                    background: var(--black);
+                    padding: 4px;
+                }
+                
+                a{
+                    margin-left: 15px;
+                }
+            }
+        }
+        >div{
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}   
+    
 footer{
     background-color: var(--cyan);
     padding: 20px 0;
