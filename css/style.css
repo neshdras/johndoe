@@ -464,6 +464,19 @@ footer{
         grid-template-columns: repeat(3, 1fr);
         gap: 40px 80px;
     }
+    .other{
+        justify-self: center;
+        grid-column: 2;
+        a{
+            color: var(--orange);
+            &:hover{
+                color: var(--rose);
+            }
+        }
+        .active{
+            color: var(--rose);
+        }
+    }
 }
 /* Responsive tablettes */
 
