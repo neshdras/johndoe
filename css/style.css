@@ -4,6 +4,7 @@
     margin: 0;
     font-family: var(--textfont);
     color: var(--white);
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -19,6 +20,19 @@
 
 body{
     background-color: var(--black);
+
+    
+    animation: fadeInUp 1s ease-out ;
+}
+@keyframes fadeInUp {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
 
 h1{
@@ -51,6 +65,60 @@ a{
     color: var(--rose);
 }
 
+.entete{
+    background-color: var(--rose);
+    text-align: center;
+    padding: 120px 0;
+    h1{
+        padding-bottom: 30px;
+    }
+}
+
+.projet-card{
+    display: grid;
+    gap: 20px;
+    .border{
+        display: grid;
+        gap: 10px;
+        padding: 20px 10px 0;
+        border-right: solid 1px ;
+        border-left: solid 1px ;
+        border-image: linear-gradient(var(--rose), var(--orange)) 1;
+        position: relative;
+        img{
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+        h3{
+            font-size: 21px;
+            font-weight: 700;
+        }
+    }
+    .front-index::before{
+        content: "Front-end";
+        color: var(--white);
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        background: var(--black);
+        padding: 4px;
+    }
+    .back-index::before{
+        content: "Back-end";
+        color: var(--white);
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        background: var(--black);
+        padding: 4px;
+    }
+    
+    a{
+        margin-left: 15px;
+    }
+}
+
 section{
     max-width: 1440px;
     margin: auto;
@@ -63,7 +131,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
     #menu{
         display: none;
     }
@@ -209,56 +277,11 @@ footer{
 #project{
         display: grid;
         gap: 30px;
-        div{
+
+        >div{
             display: flex;
             gap: 67px;
             padding-bottom: 50px;
-            article{
-                display: grid;
-                gap: 20px;
-                .border{
-                    display: grid;
-                    gap: 10px;
-                    padding: 20px 10px 0;
-                    border-right: solid 1px ;
-                    border-left: solid 1px ;
-                    border-image: linear-gradient(var(--rose), var(--orange)) 1;
-                    position: relative;
-                    img{
-                        height: 180px;
-                        width: 100%;
-                        object-fit: cover;
-                    }
-                    h3{
-                        font-size: 21px;
-                        font-weight: 700;
-                    }
-                }
-                .front-index::before{
-                    content: "Front-end";
-                    color: var(--white);
-                    position: absolute;
-                    left: 20px;
-                    top: 40px;
-                    background: var(--black);
-                    padding: 4px;
-                }
-                .back-index::before{
-                    content: "Back-end";
-                    color: var(--white);
-                    position: absolute;
-                    left: 20px;
-                    top: 40px;
-                    background: var(--black);
-                    padding: 4px;
-                }
-                
-                a{
-                    margin-left: 15px;
-                }
-            }
-        }
-        >div{
             justify-content: space-between;
             align-items: center;
         }
@@ -408,14 +431,7 @@ footer{
     .btn-templates{
         justify-self: center;
     }
-    .entete{
-        background-color: var(--rose);
-        text-align: center;
-        padding: 120px 0;
-        h1{
-            padding-bottom: 30px;
-        }
-    }
+
 
     .description{
         display: grid;
@@ -439,6 +455,16 @@ footer{
     }
 }
 
+#projet-page{
+    #all-project{
+        padding:80px 15px;
+        max-width: 1440px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 80px;
+    }
+}
 /* Responsive tablettes */
 
 @media screen and (max-width:1024px) {
@@ -501,6 +527,11 @@ footer{
             .description{
                 grid-template-columns: none;
             }
+        }
+    }
+    #projet-page{
+        #all-project{
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
@@ -571,6 +602,11 @@ footer{
             img{
                 width: 280px;
             }
+        }
+    }
+        #projet-page{
+        #all-project{
+            grid-template-columns: none;
         }
     }
 }
